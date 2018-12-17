@@ -7,15 +7,15 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db) => {
   }
   console.log('Connected to MongoDB server')
 
-  // db.collection('Todos').insertOne({
-  //   text: 'Something to do 2',
-  //   completed: false
-  // }, (err,result) => {
-  //   if(err){
-  //     return console.log(err)
-  //   }
-  //   console.log(JSON.stringify(result.ops,undefined,2))
-  // })
+  db.collection('Todos').insertOne({
+    text: 'Something to do 3',
+    completed: false
+  }, (err,result) => {
+    if(err){
+      return console.log(err)
+    }
+    console.log(JSON.stringify(result.ops,undefined,2))
+  })
   // db.collection('Users').insertOne({
   //   name: 'Carlo Riveros',
   //   age: 24,
@@ -39,13 +39,13 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db) => {
   // }, (err) => {
   //   console.log('Unable to fetch ',err)
   // })
-  db.collection('Users').find({
-    name : 'Carlo Riveros'
-  }).toArray().then( (docs) => {
-    console.log('Users');
-    console.log(JSON.stringify(docs,undefined,2))
-  }, (err) => {
-    console.log('Unable to fetch ',err)
-  })
+  // db.collection('Users').find({
+  //   name : 'Carlo Riveros'
+  // }).toArray().then( (docs) => {
+  //   console.log('Users');
+  //   console.log(JSON.stringify(docs,undefined,2))
+  // }, (err) => {
+  //   console.log('Unable to fetch ',err)
+  // })
   //db.close();
 });
