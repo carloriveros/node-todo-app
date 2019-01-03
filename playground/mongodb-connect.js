@@ -16,16 +16,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db) => {
     }
     console.log(JSON.stringify(result.ops,undefined,2))
   })
-  // db.collection('Users').insertOne({
-  //   name: 'Carlo Riveros',
-  //   age: 24,
-  //   location: 'Barranquilla'
-  // }, (err,result) => {
-  //   if(err){
-  //     return console.log(err)
-  //   }
-  //   console.log(JSON.stringify(result.ops,undefined,2))
-  // })
+  db.collection('Users').insertOne({
+    name: 'Carlo Riveros',
+    age: 24,
+    location: 'Barranquilla'
+  }, (err,result) => {
+    if(err){
+      return console.log(err)
+    }
+    console.log(JSON.stringify(result.ops,undefined,2))
+  })
   // db.collection('Todos').find({
   //   _id : new ObjectID('5c145301c4eceb3e9265c19e')
   // }).toArray().then( (docs) => {
